@@ -49,11 +49,8 @@ async def sampleDodgeRoll(
   adj_ops_with_higher_dex: int, 
   adj_ops_with_equal_dex: int,
 ):
-  roll_resulta = actions.Dodge.sample_roll(adj_ops_with_higher_dex, adj_ops_with_equal_dex)
+  roll_results = actions.Dodge.sample_roll(adj_ops_with_higher_dex, adj_ops_with_equal_dex)
   await interaction.response.send_message(roll_results)
-
-tree.add_command(dodgeRoll)
-tree.add_command(sampleDodgeRoll)
 
 @tree.command(name="stumble", description="roll to stumble")
 async def stumbleRoll(interaction: discord.Interaction):
@@ -66,9 +63,6 @@ async def sampleStumbleRoll(interaction: discord.Interaction):
   roll_results = actions.Stumble.sample_roll()
   await interaction.response.send_message(roll_results)
 
-tree.add_command(stumbleRoll)
-tree.add_command(sampleStumbleRoll)
-
 @tree.command(name="fall", description="roll to fall")
 async def fallRoll(interaction: discord.Interaction):
   roll_result = actions.Fall.roll()
@@ -80,9 +74,6 @@ async def sampleFallRoll(interaction: discord.Interaction):
   roll_results = actions.Fall.sample_roll()
   await interaction.response.send_message(roll_results)
 
-tree.add_command(fallRoll)
-tree.add_command(sampleFallRoll)
-
 @tree.command(name="throw", descripition="roll to throw")
 async def throwRoll(interaction: discord.Interaction, thrower_dex):
   roll_result = actions.Throw.roll(thrower_dex)
@@ -93,9 +84,6 @@ async def throwRoll(interaction: discord.Interaction, thrower_dex):
 async def sampleThrowRoll(interaction: discord.Interaction, thrower_dex):
   roll_results = actions.Throw.sample_roll(thrower_dex)
   await interaction.response.send_message(roll_results)
-
-tree.add_command(throwRoll)
-tree.add_command(sampleThrowRoll)
 
 @tree.command(name="block_pass", description="roll to block a pass")
 async def blockPassRoll(
@@ -115,9 +103,6 @@ async def sampleBlockPassRoll(
 ):
   roll_results = actions.PassBlock.sample_roll(blocker_dex, num_additional_blockers)
   await interaction.response.send_message(roll_results)
-
-tree.add_command(blockPassRoll)
-tree.add_command(sampleBlockPassRoll)
 
 @tree.command(name="catch", description="roll to catch")
 async def catchRoll(
@@ -140,9 +125,6 @@ async def sampleCatchRoll(
   roll_results = actions.Catch.sample_roll(catchers_dex, num_opposing_players, catch_bonus)
   await interaction.response.send_message(roll_results)
 
-tree.add_command(catchRoll)
-tree.add_command(sampleCatchRoll)
-
 @tree.command(name="hold_ball", description="roll to hold ball")
 async def holdBallRoll(interaction: discord.Interaction, holders_dex: int):
   roll_result = actions.HoldBall.roll(holders_dex)
@@ -154,13 +136,8 @@ async def sampleHoldBallRoll(interaction: discord.Interaction, holders_dex: int)
   roll_results = actions.HoldBall.sample_roll(holders_dex)
   await interaction.response.send_message(roll_results)
 
-tree.add_command(holdBallRoll)
-tree.add_command(sampleHoldBallRoll)
-
 @tree.command(name="ball_scatter_roll", descripition="roll to scatter ball")
 async def ballScatterRoll(interaction: discord.Interaction):
   roll_result = actions.BallScatter.roll()
   logger.log(interaction.user.name + "/n" + roll_result)
   await interaction.response.send_message(roll_result)
-
-tree.add_command(ballScatterRoll)
