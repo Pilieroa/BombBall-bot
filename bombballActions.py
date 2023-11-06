@@ -32,38 +32,38 @@ class BaseBomballRoll:
     return f"{cls.NAME}: {roll} + {modifier} ({roll + modifier}) -> {result}"
 
 
-class Hit:
+class Hit(BaseBomballRoll):
   ROLL = rolls.hit_roll
   NAME = "Hit"
 
-class Dodge:
+class Dodge(BaseBomballRoll):
   ROLL = rolls.dodge_roll
   NAME = "Dodge"
 
-class Stumble:
+class Stumble(BaseBomballRoll):
   ROLL = rolls.stumble_roll
   NAME = "Stumble"
 
-class Fall:
+class Fall(BaseBomballRoll):
   ROLL = rolls.fall_roll
   NAME = "Fall"
 
-class Throw:
+class Throw(BaseBomballRoll):
   ROLL = rolls.throw_roll
   NAME = "Throw"
 
-class PassBlock:
+class PassBlock(BaseBomballRoll):
   ROLL = rolls.pass_block_roll
   NAME = "Pass Block"
 
-class Catch:
+class Catch(BaseBomballRoll):
   ROLL = rolls.catch_roll
   NAME = "Catch"
 
-class HoldBall:
+class HoldBall(BaseBomballRoll):
   ROLL = rolls.ball_hold_roll
   NAME = "Hold ball"
 
-class BallScatter:
+class BallScatter(BaseBomballRoll):
   ROLL = rolls.ball_scatter_roll
   NAME = "Ball Scatter"
