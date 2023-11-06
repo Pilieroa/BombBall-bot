@@ -1,6 +1,8 @@
 import discord
 from discord import app_commands
 
+import os
+
 import bombballActions as actions
 import logger
 
@@ -141,3 +143,10 @@ async def ballScatterRoll(interaction: discord.Interaction):
   roll_result = actions.BallScatter.roll()
   logger.log(interaction.user.name + "/n" + roll_result)
   await interaction.response.send_message(roll_result)
+
+@client.event
+async def on_ready():
+    await tree.sync()
+
+
+client.run(os.getenv("DISCORD_TOKEN"))
