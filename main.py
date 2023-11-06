@@ -15,24 +15,24 @@ tree = app_commands.CommandTree(client)
 @tree.command(name="hit", description="roll to hit")
 async def hitRoll(
   interaction: discord.Interaction, 
-  hitterStrength: int,
-  targetStrength: int,
-  numAllies: int,
-  numOpponents: int,
+  hitter_strength: int,
+  target_strength: int,
+  num_allies: int,
+  num_opponents: int,
 ):
-    roll_result = actions.Hit.roll(hitterStrength, targetStrength, numAllies, numOpponents)
+    roll_result = actions.Hit.roll(hitter_strength, target_strength, num_allies, num_opponents)
     logger.log(interaction.user.name + "/n" + roll_result)
     await interaction.response.send_message(roll_result)
 
 @tree.command(name="sample_hit", description="get the probabilities for a hit")
 async def sampleHitRoll(
   interaction: discord.Interaction, 
-  hitterStrength: int,
-  targetStrength: int,
-  numAllies: int,
-  numOpponents: int,
+  hitter_strength: int,
+  target_strength: int,
+  num_allies: int,
+  num_opponents: int,
 ):
-    roll_results = actions.Hit.sample_roll(hitterStrength, targetStrength, numAllies, numOpponents)
+    roll_results = actions.Hit.sample_roll(hitter_strength, target_strength, num_allies, num_opponents)
     await interaction.response.send_message(roll_results)
 
 @tree.command(name="dodge", description="roll to dodge")
