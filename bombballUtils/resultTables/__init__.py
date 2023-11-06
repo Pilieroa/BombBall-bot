@@ -1,8 +1,8 @@
-from HitResultTable import HIT_RESULT_TABLE
-from DodgeResultTable import DODGE_RESULT_TABLE
-from ThrowResultTable import THROW_RESULT_TABLE
-from PassBlockResultTable import PASS_BLOCK_RESULT_TABLE
-from CatchResultTable import CATCH_RESULT_TABLE
-from BallHoldResultTable import BALL_HOLD_RESULT_TABLE
-from InjuryResultTable import INJURY_RESULT_TABLE
-import constants as resultConstants
+from bombballUtils.resultTables.HitResultTable import HIT_RESULT_TABLE
+from bombballUtils.resultTables.DodgeResultTable import DODGE_RESULT_TABLE
+from bombballUtils.resultTables.ThrowResultTable import THROW_RESULT_TABLE
+from bombballUtils.resultTables.PassBlockResultTable import PASS_BLOCK_RESULT_TABLE
+from bombballUtils.resultTables.CatchResultTable import CATCH_RESULT_TABLE
+from bombballUtils.resultTables.BallHoldResultTable import BALL_HOLD_RESULT_TABLE
+from bombballUtils.resultTables.InjuryResultTable import INJURY_RESULT_TABLE
+from bombballUtils.resultTables import constants as resultConstants

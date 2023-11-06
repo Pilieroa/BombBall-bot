@@ -22,7 +22,7 @@ async def hitRoll(
     logger.log(interaction.user.name + "/n" + roll_result)
     await interaction.response.send_message(roll_result)
 
-@tree.command(name="sample hit", description="get the probabilities for a hit")
+@tree.command(name="sample_hit", description="get the probabilities for a hit")
 async def sampleHitRoll(
   interaction: discord.Interaction, 
   hitterStrength: int,
@@ -32,9 +32,6 @@ async def sampleHitRoll(
 ):
     roll_results = actions.Hit.sample_roll(hitterStrength, targetStrength, numAllies, numOpponents)
     await interaction.response.send_message(roll_results)
-
-tree.add_command(hitRoll)
-tree.add_command(sampleHitRoll)
 
 @tree.command(name="dodge", description="roll to dodge")
 async def dodgeRoll(
@@ -46,7 +43,7 @@ async def dodgeRoll(
   logger.log(interaction.user.name + "/n" + roll_result)
   await interaction.response.send_message(roll_result)
 
-@tree.command(name="sample dodge", description="get the probabilities of a dodge")
+@tree.command(name="sample_dodge", description="get the probabilities of a dodge")
 async def sampleDodgeRoll(
   interaction: discord.Interaction,
   adj_ops_with_higher_dex: int, 
@@ -64,7 +61,7 @@ async def stumbleRoll(interaction: discord.Interaction):
   logger.log(interaction.user.name + "/n" + roll_result)
   await interaction.response.send_message(roll_result)
 
-@tree.command(name="sample stumble", description="get the probabilities of a stumble")
+@tree.command(name="sample_stumble", description="get the probabilities of a stumble")
 async def sampleStumbleRoll(interaction: discord.Interaction):
   roll_results = actions.Stumble.sample_roll()
   await interaction.response.send_message(roll_results)
@@ -78,7 +75,7 @@ async def fallRoll(interaction: discord.Interaction):
   logger.log(interaction.user.name + "/n" + roll_result)
   await interaction.response.send_message(roll_result)
 
-@tree.command(name="sample fall", description="get probabilities of a fall")
+@tree.command(name="sample_fall", description="get probabilities of a fall")
 async def sampleFallRoll(interaction: discord.Interaction):
   roll_results = actions.Fall.sample_roll()
   await interaction.response.send_message(roll_results)
@@ -92,7 +89,7 @@ async def throwRoll(interaction: discord.Interaction, thrower_dex):
   logger.log(interaction.user.name + "/n" + roll_result)
   await interaction.response.send_message(roll_result)
 
-@tree.command(name="sample throw", descripition="get probabilities for a throw")
+@tree.command(name="sample_throw", descripition="get probabilities for a throw")
 async def sampleThrowRoll(interaction: discord.Interaction, thrower_dex):
   roll_results = actions.Throw.sample_roll(thrower_dex)
   await interaction.response.send_message(roll_results)
@@ -100,7 +97,7 @@ async def sampleThrowRoll(interaction: discord.Interaction, thrower_dex):
 tree.add_command(throwRoll)
 tree.add_command(sampleThrowRoll)
 
-@tree.command(name="block pass", description="roll to block a pass")
+@tree.command(name="block_pass", description="roll to block a pass")
 async def blockPassRoll(
   interaction: discord.Interaction, 
   blocker_dex: int, 
@@ -110,7 +107,7 @@ async def blockPassRoll(
   logger.log(interaction.user.name + "/n" + roll_result)
   await interaction.response.send_message(roll_result)
 
-@tree.command(name="sample block pass", description="get the probabilities for blocking a pass")
+@tree.command(name="sample_block_pass", description="get the probabilities for blocking a pass")
 async def sampleBlockPassRoll(
   interaction: discord.Interaction, 
   blocker_dex: int, 
@@ -133,7 +130,7 @@ async def catchRoll(
   logger.log(interaction.user.name + "/n" + roll_result)
   await interaction.response.send_message(roll_result)
 
-@tree.command(name="sample catch", description="get the probabilities for catching")
+@tree.command(name="sample_catch", description="get the probabilities for catching")
 async def sampleCatchRoll(
   interaction: discord.Interaction,
   catchers_dex: int, 
@@ -146,13 +143,13 @@ async def sampleCatchRoll(
 tree.add_command(catchRoll)
 tree.add_command(sampleCatchRoll)
 
-@tree.command(name="hold ball", description="roll to hold ball")
+@tree.command(name="hold_ball", description="roll to hold ball")
 async def holdBallRoll(interaction: discord.Interaction, holders_dex: int):
   roll_result = actions.HoldBall.roll(holders_dex)
   logger.log(interaction.user.name + "/n" + roll_result)
   await interaction.response.send_message(roll_result)
 
-@tree.command(name="sample hold ball", description="get the probabilities for holding ball")
+@tree.command(name="sample_hold_ball", description="get the probabilities for holding ball")
 async def sampleHoldBallRoll(interaction: discord.Interaction, holders_dex: int):
   roll_results = actions.HoldBall.sample_roll(holders_dex)
   await interaction.response.send_message(roll_results)
@@ -160,11 +157,10 @@ async def sampleHoldBallRoll(interaction: discord.Interaction, holders_dex: int)
 tree.add_command(holdBallRoll)
 tree.add_command(sampleHoldBallRoll)
 
-@tree.command(name="ball scatter roll", descripition="roll to scatter ball")
+@tree.command(name="ball_scatter_roll", descripition="roll to scatter ball")
 async def ballScatterRoll(interaction: discord.Interaction):
   roll_result = actions.BallScatter.roll()
   logger.log(interaction.user.name + "/n" + roll_result)
   await interaction.response.send_message(roll_result)
 
 tree.add_command(ballScatterRoll)
-

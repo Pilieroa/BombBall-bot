@@ -1,5 +1,5 @@
-from .BaseResultTable import BaseResultTable, ResultTableRow
-import constants
+from bombballUtils.resultTables.BaseResultTable import BaseResultTable, ResultTableRow
+from bombballUtils.resultTables import constants
 
 class HitResultTable(BaseResultTable):
   RESULT_ROWS = [

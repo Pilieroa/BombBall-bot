@@ -1,5 +1,5 @@
-from dice import roll_a_d8, roll_a_d10, roll_a_d100
-import resultTables
+from bombballUtils.dice import roll_a_d8, roll_a_d10, roll_a_d100
+from bombballUtils import resultTables
 
 def hit_roll(hitter_str, target_str, num_adj_attackers, num_adj_defenders):
   modifier = hitter_str - target_str + num_adj_attackers - num_adj_attackers
