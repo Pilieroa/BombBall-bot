@@ -9,7 +9,6 @@ class BaseBomballRoll:
   def roll(cls, *args):
     roll, modifier, result = cls.ROLL(*args)
     formatted_result = cls._format(roll, modifier, result)
-    cls._log(formatted_result)
     return formatted_result
 
   @classmethod
